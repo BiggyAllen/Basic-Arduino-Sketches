@@ -1,0 +1,60 @@
+int bit1 = 5;
+int bit2 = 4;
+int bit3 = 3;
+int bit4 = 2;
+int intermediate = 500;
+int count = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(bit1,OUTPUT);
+pinMode(bit2,OUTPUT);
+pinMode(bit3,OUTPUT);
+pinMode(bit4,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+if(count % 2 == 0)
+  {
+    digitalWrite(bit1, HIGH);
+  }
+else
+  {
+    digitalWrite(bit1, LOW);
+  }
+
+if(count % 4 == 0 || count % 4 == 1)
+  {
+    digitalWrite(bit2,LOW);
+  }
+else
+  {
+    digitalWrite(bit2,HIGH);
+  }
+
+if(count % 8 == 0 || count % 8 == 1 || count % 8 == 2 || count % 8 == 3)
+  {
+    digitalWrite(bit3,LOW);
+  }
+else
+  {
+    digitalWrite(bit3,HIGH);
+  }
+
+if(count < 8)
+  {
+    digitalWrite(bit4,LOW);
+  }
+else
+  {
+    digitalWrite(bit4,HIGH);
+  }
+
+if(count > 15)
+  {
+    count = 0;
+  }
+
+delay(intermediate);
+}
