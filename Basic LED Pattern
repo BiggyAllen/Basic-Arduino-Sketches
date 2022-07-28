@@ -1,0 +1,37 @@
+int on = 300, off = 1000;
+int redLED = 8, blueLED = 9, yellowLED = 10;
+int redRepeat = 5, blueRepeat = 10, yellowRepeat = 15;
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(redLED,OUTPUT);
+pinMode(blueLED,OUTPUT);
+pinMode(yellowLED,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+for(i = 0, i < redRepeat, i++)
+{
+digitalWrite(redLED,HIGH);
+delay(on);
+digitalWrite(redLED,LOW);
+delay(off);
+}
+
+for(j = 0, j < blueRepeat, j++)
+{
+digitalWrite(blueLED,HIGH);
+delay(on);
+digitalWrite(blueLED,LOW);
+delay(off);
+}
+
+for(k = 0, k < yellowRepeat, k++)
+{
+digitalWrite(yellowLED,HIGH);
+delay(on);
+digitalWrite(yellowLED,LOW);
+delay(off);
+}
+}
