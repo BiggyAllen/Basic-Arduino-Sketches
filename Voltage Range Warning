@@ -1,0 +1,41 @@
+int readPin = ;
+int redPin = ;
+int yellowPin = ;
+int greenPin = ;
+float V1;
+float readVal;
+int dt = 250;
+float lowerLimit = 3.0;
+float upperLimit = 4.0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(readPin,INPUT);
+  pinMode(redPin,OUTPUT);
+  pinMode(yellowPin,OUTPUT);
+  pinMode(greenPin,OUTPUT);
+}
+
+void loop() {
+  readVal = digitalRead(readPin);
+  V2 = (5./1023.)*readVal;
+  if(V1<lowerLimit){
+    digitalWrite(greenPin,HIGH);
+  }
+  else {
+    digitalWrite(greenPin,LOW);
+  }
+  if(V1>lowerLimit && V1<upperLimit){
+    digitalWrite(yellowPin,HIGH);
+  }
+  else {
+    digitalWrite(yellowPin,LOW);
+  }
+  if(V1>upperLimit){
+    digitalWrite(redPin,HIGH;
+  }
+  else {
+    digitalWrite(redPin,LOW);
+  }
+  delay(dt);
+}
