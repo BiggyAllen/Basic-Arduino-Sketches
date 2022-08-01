@@ -1,7 +1,7 @@
-int readPin = ;
-int redPin = ;
-int yellowPin = ;
-int greenPin = ;
+int readPin = 9;
+int redPin = 10;
+int yellowPin = 11;
+int greenPin = 12;
 float V1;
 float readVal;
 int dt = 250;
@@ -18,7 +18,7 @@ void setup() {
 
 void loop() {
   readVal = digitalRead(readPin);
-  V2 = (5./1023.)*readVal;
+  V1 = (5./1023.)*readVal;
   if(V1<lowerLimit){
     digitalWrite(greenPin,HIGH);
   }
@@ -32,7 +32,7 @@ void loop() {
     digitalWrite(yellowPin,LOW);
   }
   if(V1>upperLimit){
-    digitalWrite(redPin,HIGH;
+    digitalWrite(redPin,HIGH);
   }
   else {
     digitalWrite(redPin,LOW);
